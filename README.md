@@ -40,12 +40,14 @@ Method 'GET' allows you to receive an array with all the users and their links.
 Method 'POST' allows you to register an user if you send this type of body:
 
 Expected body:
+```
 { 
   "username":"string",
   "email":"string",
   "name":"string",
   "password":"string"
 }
+```
 
 /api/users/login
 Method 'POST' allows you to login a user if the fields are valid
@@ -60,19 +62,23 @@ Expected body:
 Method 'POST' allows you upload a link for an user
 
 Expected body:
+```
 {
   "id":"string",
   "link":"string"
 }
+```
 
-/api/users/[username]
+/api/users/:username
 Method 'GET' allows you to receive an specific user data and their links
 
 /api/users/update
 Method 'POST' allows you to edit the info of an specific user
 
 Expected body:
-"An object with just the entries (keys and values) to edit. (Username, avatar, bio, email, etc.)"
+```
+An object with just the entries (keys and values) to edit. (Username, avatar, bio, email, etc.)
+```
 
 Slugs
 /api/slugs
@@ -82,9 +88,11 @@ Method 'GET' sends you an array with all the available slugs to visit
 Method 'POST' allows you to edit an specific user slug
 
 Expected body:
+```
 {
   "id":"string",
   "slug":"string"
 }
+```
 
 The main objective of the project is to develop an application as complete as possible based on the basic idea. Then share the code on Github and spread it through the community! Happy development.
