@@ -25,7 +25,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(400).json({ error: true, message: "Invalid password" })
   }
 
-  const token = sign({ user }, "narciso", { expiresIn: "2h" })
+  const token = sign({ user }, "secret", { expiresIn: "2h" })
 
   res.status(200).json({ status: "OK", token })
 }
