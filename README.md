@@ -33,10 +33,10 @@ Link
 
 Users
 
-/api/users/
+- /api/users/
 Method 'GET' allows you to receive an array with all the users and their links.
 
-/api/users/register
+- /api/users/register
 Method 'POST' allows you to register an user if you send this type of body:
 
 Expected body:
@@ -49,7 +49,7 @@ Expected body:
 }
 ```
 
-/api/users/login
+- /api/users/login
 Method 'POST' allows you to login a user if the fields are valid
 
 Expected body:
@@ -58,7 +58,7 @@ Expected body:
   "password":"string"
 }
 
-/api/users/upload-link
+- /api/users/upload-link
 Method 'POST' allows you upload a link for an user
 
 Expected body:
@@ -69,10 +69,10 @@ Expected body:
 }
 ```
 
-/api/users/:username
+- /api/users/:username
 Method 'GET' allows you to receive an specific user data and their links
 
-/api/users/update
+- /api/users/update
 Method 'POST' allows you to edit the info of an specific user
 
 Expected body:
@@ -81,10 +81,11 @@ An object with just the entries (keys and values) to edit. (Username, avatar, bi
 ```
 
 Slugs
-/api/slugs
+
+- /api/slugs
 Method 'GET' sends you an array with all the available slugs to visit
 
-/api/slugs/edit
+- /api/slugs/edit
 Method 'POST' allows you to edit an specific user slug
 
 Expected body:
