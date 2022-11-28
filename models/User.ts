@@ -25,10 +25,14 @@ export const getUserByEmail = async (email: string) => {
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 export const createUser = async (data: any) => {
-  const createdUser = await prisma.user.create({
-    data: data
-  })
-  return createdUser
+  try {
+    const createdUser = await prisma.user.create({
+      data: data
+    })
+    return createdUser
+  } catch (error) {
+    return {msg: "An error has ocurred"}
+  }
 }
 
 export const getUserFromSlug = (slug: string) => {
@@ -58,25 +62,34 @@ export const getUserAndLinks = async (username: string) => {
 }
 
 export const uploadUserLink = async (id: string, link: string) => {
-  const newLink = await prisma.link.create({
-    data: {
-      destination: link as string,
-      userId: id as string
-    }
-  })
-  return newLink
+  try {
+    const newLink = await prisma.link.create({
+      data: {
+        destination: link as string,
+        userId: id as string
+      }
+    })
+    return newLink  
+  } catch (error) {
+    return {msg: "Link already exists"}
+  }
+  
 }
 
 export const editUserSlug = async (id: string, newSlug: string) => {
-  const newUserSlug = await prisma.user.update({
-    where: {
-      id: id as string
-    },
-    data: {
-      slug: newSlug
-    }
-  })
-  return newUserSlug
+  try {
+    const newUserSlug = await prisma.user.update({
+      where: {
+        id: id as string
+      },
+      data: {
+        slug: newSlug
+      }
+    })
+    return newUserSlug
+  } catch (error) {
+    return error
+  }
 }
 
 export const getAllExistingSlugs = async () => {
@@ -89,11 +102,15 @@ export const getAllExistingSlugs = async () => {
 }
 
 export const updateUserInfo = async (username: string, data: any) => {
-  const res = await prisma.user.update({
-    where: {
-      username: username
-    },
-    data: data
-  })
-  return res
+  try {
+    const res = await prisma.user.update({
+      where: {
+        username: username
+      },
+      data: data
+    })  
+    return res
+  } catch (error) {
+    return error
+  }
 }
