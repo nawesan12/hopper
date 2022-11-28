@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { createUser } from "../../../../models/User";
+import { createUser } from "@models/User";
 import { hashPassword, id } from "@utils/unique";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -17,7 +17,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     password: await hashPassword(password),
     slug: username,
     bio: "",
-    config: ""
+    config: "",
+    avatar: `https://avatars.dicebear.com/api/micah/${username}.svg`
   }
 
   const createdUser = await createUser(newUser)

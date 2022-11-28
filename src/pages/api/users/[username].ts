@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getUserAndLinks } from "../../../../models/User";
+import { getUserAndLinks } from "@models/User";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   const { username } = req.query

@@ -1,7 +1,7 @@
 import { verify, decode } from 'jsonwebtoken'
 
 export const verifyToken = (token: string) => {
-    const decoded = verify(token, "narciso")
+    const decoded = verify(token, "secret")
     return decoded
 }
 

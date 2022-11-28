@@ -17,6 +17,7 @@ model User {
   password  String
   bio       String?
   config    String?
+  avatar    String?
   createdAt DateTime @default(now())
   slug      String   @unique
   links     Link[]

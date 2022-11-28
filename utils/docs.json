@@ -11,7 +11,7 @@
   ],
   "objects": [
     {
-      "name": "user",
+      "name": "User",
       "types": {
         "id": "Auto-generated unique user ID",
         "username": "Unique string",
@@ -19,22 +19,22 @@
         "email": "Unique | User's email",
         "password": "Auto encrypted string",
         "bio": "Optional string",
-        "config": "Stringified JSON that should be parsed to be applied",
-        "createdAt": "Date time",
+        "config": "Optional stringified JSON that should be parsed to be applied",
+        "avatar": "Optional auto generated link to an image.",
+        "createdAt": "Optional | Auto generated date time ",
         "slug": "Unique | Auto setted to [username]"
       }
     },
     {
-      "name": "link",
+      "name": "Link",
       "types": {
         "id": "Auto incremental ID",
         "destination": "Link entered by the user",
-        "userId": "Relation | User's link owner id",
-        "user": "User's ID"
+        "userId": "Relation | User's link owner id | This is the one you send",
+        "user": "User's ID | This is the one you receive"
       }
     }
   ],
-  "instructions": [],
   "routes": [
     {
       "type": "Users",
@@ -65,7 +65,7 @@
         {
           "name": "/api/users/update",
           "description": "Method 'POST' allows you to edit the info of an specific user",
-          "body": {"username": "string", "data": "object - {'username': 'string', 'email':'string', 'password': 'string', 'name': 'string'}"}
+          "body": "An object with just the entries (keys and values) to edit. (Username, avatar, bio, email, etc.)"
         }
       ]
     },
@@ -83,5 +83,6 @@
         }      
       ]
     }
-  ]
+  ],
+  "ideas": "The main objective of the project is to develop an application as complete as possible based on the basic idea. Then share the code on Github and spread it through the community! Happy development."
 }
