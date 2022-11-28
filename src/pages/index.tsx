@@ -6,7 +6,7 @@ const Home: NextPage = () => {
   return (
     <>
     <main className="flex flex-col items-center py-5">
-      <section className="title my-5">
+      <section className="my-5">
         <h1 className="text-4xl flex gap-2 font-semibold">Welcome to Hopper! <Image src='/hopper.webp' width={30} height={30} alt="Hopper!"/></h1>
         <h2 className="text-xl font-semibold">A brand new link showcase</h2>
       </section>
@@ -21,8 +21,8 @@ const Home: NextPage = () => {
 
         <article className="my-5">
           <h3 className="font-semibold text-2xl">Documentation</h3>
-          <section className="docs">
-            <article className="part my-3">
+          <section>
+            <article className="my-3">
               <h4 className="font-semibold text-xl">Data Types</h4>
               {
               docs.objects.map((object, index) => (
@@ -39,11 +39,11 @@ const Home: NextPage = () => {
               ))
               }
             </article>
-            <article className="part my-3">
+            <article className="my-3">
               <h4 className="font-semibold text-xl">Routes</h4>
               {
               docs.routes.map((route, index) => (
-                <div className="routes-group p-4" key={index}>
+                <div className="p-4" key={index}>
                   <h5 className="text-lg font-medium">{route.type}</h5>
                   <ul className="p-2">
                   {
